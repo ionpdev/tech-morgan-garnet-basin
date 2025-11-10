@@ -1,6 +1,4 @@
-import React from "react";
-
-const LogoSvg = ({ className }) => {
+const LogoSvg = ({ className }: { className?: string }) => {
   return (
     <svg
       width="139"
@@ -46,7 +44,7 @@ const LogoSvg = ({ className }) => {
         fill="white"
       ></path>
     </svg>
-  );
-};
+  )
+}
 
-export default LogoSvg;
+export default LogoSvg

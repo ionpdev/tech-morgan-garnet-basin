@@ -1,11 +1,6 @@
-import { Request, Response, NextFunction } from "express"
 import { SERVER_XCSRF_TOKEN } from "./config.ts"
 
-export function csrfMiddleware(
-  req: Request,
-  res: Response,
-  next: NextFunction
-) {
+export function csrfMiddleware(req, res, next) {
   if (req.method !== "POST") {
     return next()
   }

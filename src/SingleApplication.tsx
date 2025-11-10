@@ -1,7 +1,17 @@
-import React from "react";
-import styles from "./SingleApplication.module.css";
+import styles from "./SingleApplication.module.css"
+import { formatDate } from "./utils"
 
-const SingleApplication = ({ application }) => {
+interface Application {
+  company: string
+  first_name: string
+  last_name: string
+  email: string
+  loan_amount: number
+  date_created: string
+  expiry_date: string
+}
+
+const SingleApplication = ({ application }: { application: Application }) => {
   return (
     <div className={styles.SingleApplication}>
       <div className={styles.cell}>
@@ -14,7 +24,9 @@ const SingleApplication = ({ application }) => {
       </div>
       <div className={styles.cell}>
         <sub>Email</sub>
-        {application.email}
+        <a href={`mailto:${application.email}`} className={styles.email}>
+          {application.email}
+        </a>
       </div>
       <div className={styles.cell}>
         <sub>Loan Amount</sub>
@@ -22,14 +34,14 @@ const SingleApplication = ({ application }) => {
       </div>
       <div className={styles.cell}>
         <sub>Application Date</sub>
-        {application.date_created}
+        {formatDate(application.date_created)}
       </div>
       <div className={styles.cell}>
         <sub>Expiry date</sub>
-        {application.expiry_date}
+        {formatDate(application.expiry_date)}
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default SingleApplication;
+export default SingleApplication

@@ -1,11 +1,11 @@
 .button {
   background-color: var(--color-denim-15);
   border: 2px solid transparent;
-  line-height: 24px;
+  line-height: normal;
   border-radius: 8px;
   color: var(--color-white-100);
   font-weight: bold;
-  padding: 8px 24px;
+  padding: 8px 40px;
   text-align: center;
   white-space: nowrap;
   transition: background-color 0.3s;

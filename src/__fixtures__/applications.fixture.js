@@ -9,4 +9,4 @@ export const getSingleApplicationFixture = [
     date_created: "2021-08-10",
     expiry_date: "2021-12-02",
   },
-];
+]

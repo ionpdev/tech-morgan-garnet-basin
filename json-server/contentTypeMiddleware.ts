@@ -1,10 +1,4 @@
-import { Request, Response, NextFunction } from "express"
-
-export function contentTypeMiddleware(
-  req: Request,
-  res: Response,
-  next: NextFunction
-) {
+export function contentTypeMiddleware(req, res, next) {
   if (req.method !== "POST") {
     return next()
   }

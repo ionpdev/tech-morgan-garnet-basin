@@ -13,11 +13,24 @@
   text-align: left;
   border-right: 1px solid #eee;
   padding: 0 15px;
+  font-size: 0.9rem;
+  color: #1a2b3c;
+  font-weight: 600;
 }
 
 .cell sub {
   display: block;
-  font-size: 0.8rem;
-  color: #999;
+  font-size: 0.75rem;
+  color: #a0a8b1;
   margin-bottom: 5px;
+  font-weight: 500;
+}
+
+.email {
+  color: #246ac1;
+  text-decoration: none;
+}
+
+.email:hover {
+  text-decoration: underline;
 }
