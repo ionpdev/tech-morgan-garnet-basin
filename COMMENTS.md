@@ -1,7 +1,5 @@
 # Project Comments
 
-### ESM Module Resolution with ts-node
-
 I am using a fresh latest vite create project with latest versions for all packages.
 
 Faced a few issues on TS config for json-server fixed those by creating a tsconfig separately as a temporary fix with a few rules.
