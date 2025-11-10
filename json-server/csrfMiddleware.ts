@@ -1,0 +1,34 @@
+import { Request, Response, NextFunction } from "express"
+import { SERVER_XCSRF_TOKEN } from "./config.ts"
+
+export function csrfMiddleware(
+  req: Request,
+  res: Response,
+  next: NextFunction
+) {
+  if (req.method !== "POST") {
+    return next()
+  }
+
+  const client_xcsrf_token = req.headers["x-csrftoken"]
+  if (client_xcsrf_token === undefined) {
+    return res.status(403).send(
+      JSON.stringify({
+        error: "Permission Denied: X-CSRF token required",
+        detail:
+          'Retrieve your X-CSRF token from "/api/auth/xcsrftoken/" and set it as a "x-csrftoken" header',
+      })
+    )
+  }
+
+  if (client_xcsrf_token !== SERVER_XCSRF_TOKEN) {
+    return res.status(403).send(
+      JSON.stringify({
+        error: "Permission Denied: X-CSRF token incorrect",
+        detail: "Make sure you are sending the correct token",
+      })
+    )
+  }
+
+  next()
+}
