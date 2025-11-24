@@ -1,12 +1,23 @@
 import SingleApplication from "./SingleApplication"
-import { useFetchApplications } from "./hooks/useFetchApplications"
-import { Button } from "./ui/Button/Button"
+import { Button } from "./components/Button/Button"
 import styles from "./Applications.module.css"
+import type { Application } from "./hooks/useFetchApplications"
 
-const Applications = () => {
-  const { applications, loading, error, hasMore, loadMore } =
-    useFetchApplications()
+interface ApplicationsProps {
+  applications: Application[]
+  loading: boolean
+  error: string | null
+  hasMore: boolean
+  loadMore: () => void
+}
 
+const Applications = ({
+  applications,
+  loading,
+  error,
+  hasMore,
+  loadMore,
+}: ApplicationsProps) => {
   if (loading && applications.length === 0) {
     return <div className={styles.Applications}>Loading applications...</div>
   }

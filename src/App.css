@@ -32,3 +32,33 @@
     transform: rotate(360deg);
   }
 }
+
+.create-button-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 2rem auto 1rem;
+  padding: 0 1rem;
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* Tablet and below */
+@media (max-width: 768px) {
+  .create-button-container {
+    margin: 1.5rem auto 1rem;
+    padding: 0 1rem;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .create-button-container {
+    margin: 1rem auto 0.5rem;
+    padding: 0 0.75rem;
+    justify-content: stretch;
+  }
+
+  .create-button-container button {
+    flex: 1;
+  }
+}

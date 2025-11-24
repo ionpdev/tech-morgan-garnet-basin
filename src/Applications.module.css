@@ -2,10 +2,37 @@
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
+  padding: 0 1rem;
 }
 
 .ButtonContainer {
   display: flex;
   justify-content: center;
   margin: 2rem;
+}
+
+/* Tablet and below */
+@media (max-width: 768px) {
+  .Applications {
+    padding: 0 1rem;
+  }
+
+  .ButtonContainer {
+    margin: 1.5rem 0;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .Applications {
+    padding: 0 0.75rem;
+  }
+
+  .ButtonContainer {
+    margin: 1rem 0;
+  }
+
+  .ButtonContainer button {
+    width: 100%;
+  }
 }

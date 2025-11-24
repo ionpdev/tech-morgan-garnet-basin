@@ -18,7 +18,10 @@ type UseFetchApplicationsResult = {
   error: string | null
   hasMore: boolean
   loadMore: () => void
+  addApplication: (application: Application) => void
 }
+
+export type { Application }
 
 const API_BASE_URL = "http://localhost:3001/api"
 const LIMIT = 5
@@ -73,5 +76,10 @@ export const useFetchApplications = (): UseFetchApplicationsResult => {
     }
   }
 
-  return { applications, loading, error, hasMore, loadMore }
+  const addApplication = (application: Application) => {
+    // simple optimistic ui update
+    setApplications((prev) => [...prev, application])
+  }
+
+  return { applications, loading, error, hasMore, loadMore, addApplication }
 }
